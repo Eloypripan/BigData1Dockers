@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
-    - name: image2
-      run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
+    # - name: image2
+    #  run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
