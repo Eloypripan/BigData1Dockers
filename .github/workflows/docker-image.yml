@@ -14,7 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
+    - name: SQL Docker image
+      #run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
+      run: docker build --pull --rm --file "sgbd_mysql.dockerfile" --tag sgbd:latest "."
     # - name: image2
     #  run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
