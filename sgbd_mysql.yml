@@ -1,0 +1,15 @@
+version: '3' #version de doque compose
+services:
+  sgbd: #nombre del sevicio
+    image: mysql:latest #imagen base
+    ports:
+      - "3306:3306" #puertos local:contenedor
+    environment: #configuraciones
+      - MYSQL_ROOT_PASSWORD=secretpassword
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=mypassword
+    command: --bind-address=0.0.0.0 #permitir consultas desde el exterior del contenedor
+
+#ejecuto -detach (background)
+# docker-compose up -d
