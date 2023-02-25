@@ -1,15 +1,18 @@
-version: '3' #version de doque compose
+version: '3.9' #version de docker compose
 services:
   sgbd: #nombre del sevicio
-    image: mysql:latest #imagen base
-    ports:
-      - "3306:3306" #puertos local:contenedor
+    build: 'sgbd_mysql.dockerfile'
+    #image: 'sgbd'
+    ports: #puertos local:contenedor
+      - "3306:3306"
     environment: #configuraciones
       - MYSQL_ROOT_PASSWORD=secretpassword
       - MYSQL_DATABASE=mydb
       - MYSQL_USER=myuser
       - MYSQL_PASSWORD=mypassword
-    command: --bind-address=0.0.0.0 #permitir consultas desde el exterior del contenedor
-
-#ejecuto -detach (background)
-# docker-compose up -d
+    # command: --bind-address=0.0.0.0 #permitir consultas desde el exterior del contenedor
+    volumes:
+      - .:/var/lib/mysql
+      
+# ejecuto --detach (background)
+# docker-compose up --detach -f sgbd_mysql.yml
