@@ -13,11 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - name: Manual Docker Runs
-        # run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
-        # run: docker build --pull --rm --file "sgbd_mysql.dockerfile" --tag sgbd:latest "."
-      # - name: image2
-        # run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
+      #- name: Manual Docker Runs
+        #run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
+        #run: docker build --pull --rm --file "sgbd_mysql.dockerfile" --tag sgbd:latest "."
+      #- name: image2
+         #run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
+      #- name: Manual Docker Login
+        #run docker login -u USERNAME -p TOKEN docker.pkg.github.com
+        #run docker push docker.pkg.github.com/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME
       
       - name: Checkout code
         uses: actions/checkout@v3
@@ -30,8 +33,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-        # run docker login -u USERNAME -p TOKEN docker.pkg.github.com
-        # run docker push docker.pkg.github.com/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
