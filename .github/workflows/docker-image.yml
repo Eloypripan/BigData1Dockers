@@ -47,7 +47,7 @@ jobs:
         uses: docker/metadata-action@v2
         with:
           images: |
-            eloypripan
+            my-docker-hub-namespace/my-docker-hub-repository
             ghcr.io/${{ github.repository }}
       # my-docker-hub-namespace/my-docker-hub-repository
 
