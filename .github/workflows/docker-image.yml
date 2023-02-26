@@ -34,6 +34,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          dockerfile: sgbd_mysql.dockerfile
+          file: sgbd_mysql.dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/sgbd:latest
