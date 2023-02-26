@@ -19,9 +19,7 @@ jobs:
       #- run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
       #Manual Docker Login
       #- run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_GITHUB }} docker.pkg.github.com
-      #- run: docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin ${{ secrets.DOCKER_GITHUB }} docker.pkg.github.com
-      #Manual Push
-      #- run: docker push sdbd:latest
+      #- run: echo ${{ secrets.DOCKER_GITHUB }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       
       - name: Checkout code
         uses: actions/checkout@v3
