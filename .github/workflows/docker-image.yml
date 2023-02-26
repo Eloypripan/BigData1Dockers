@@ -47,8 +47,7 @@ jobs:
         uses: docker/metadata-action@v2
         with:
           images: |
-            my-docker-hub-namespace/my-docker-hub-repository
-      #ghcr.io/${{ github.repository }}
+             ghcr.io/${{ github.repository }}
       # my-docker-hub-namespace/my-docker-hub-repository
 
       - name: Build and push Docker image
@@ -57,6 +56,6 @@ jobs:
           context: .
           file: sgbd_mysql.dockerfile
           push: true
-          #tags: ${{ secrets.DOCKER_USERNAME }}/sgbd:latest
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/sgbd:latest
+          #tags: ${{ steps.meta.outputs.tags }}
+          #labels: ${{ steps.meta.outputs.labels }}
