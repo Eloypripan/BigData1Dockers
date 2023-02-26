@@ -19,8 +19,8 @@ jobs:
       #- name: image2
          #run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
       #- name: Manual Docker Login
-        #run docker login -u USERNAME -p TOKEN docker.pkg.github.com
-        #run docker push docker.pkg.github.com/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME
+      - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_GITHUB }} docker.pkg.github.com
+        #run: docker push docker.pkg.github.com/eloyprian/sql/sdbd:latest
       
       - name: Checkout code
         uses: actions/checkout@v3
