@@ -48,7 +48,7 @@ jobs:
         with:
           images: |
             my-docker-hub-namespace/my-docker-hub-repository
-            ghcr.io/${{ github.repository }}
+      #ghcr.io/${{ github.repository }}
       # my-docker-hub-namespace/my-docker-hub-repository
 
       - name: Build and push Docker image
