@@ -59,4 +59,4 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/sgbd:latest
           #tags: ${{ steps.meta.outputs.tags }}
           #labels: ${{ steps.meta.outputs.labels }}
-      - run: docker push ghcr.io/sgbd:latest
+      - run: docker push ghcr.io/${{ github.repository }}/sgbd:latest
