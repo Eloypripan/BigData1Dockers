@@ -13,12 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: SQL Docker image
-        #run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
-        run: docker build --pull --rm --file "sgbd_mysql.dockerfile" --tag sgbd:latest "."
+      # - name: Manual Docker Runs
+        # run: docker build . --file sgbd_mysql.dockerfile --tag sgbd:$(date +%s)
+        # run: docker build --pull --rm --file "sgbd_mysql.dockerfile" --tag sgbd:latest "."
       # - name: image2
-      #  run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
+        # run: docker-compose up . --file sgbd_mysql.yml --tag sgbd:$(date +%s) -d
+      
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
