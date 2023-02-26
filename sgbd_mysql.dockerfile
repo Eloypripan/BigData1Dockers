@@ -19,7 +19,7 @@ VOLUME /var/lib/mysql
 
 # Nombre de la imagen
 LABEL name="sgbd"
-LABEL org.opencontainers.image.source=https://github.com/eloypripan/BisData1Dockers
+LABEL org.opencontainers.image.source=https://github.com/eloypripan/BigData1Dockers
 LABEL org.opencontainers.image.description="sgbd"
 
 # Comando de inicio
