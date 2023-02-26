@@ -21,6 +21,7 @@ jobs:
       #- name: Manual Docker Login
       #- run: docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin ${{ secrets.DOCKER_GITHUB }} docker.pkg.github.com
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_GITHUB }} docker.pkg.github.com
+      - run: docker build -t docker.pkg.github.com/eloypripan/sql/sdbd:latest -f sgbd_mysql.dockerfile .
       - run: docker push docker.pkg.github.com/eloypripan/sql/sdbd:latest
       
       - name: Checkout code
