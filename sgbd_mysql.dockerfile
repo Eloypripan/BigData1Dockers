@@ -19,13 +19,20 @@ VOLUME /var/lib/mysql
 
 # Nombre de la imagen
 LABEL name="sgbd"
+LABEL org.opencontainers.image.source=https://github.com/eloypripan/BisData1Dockers
+LABEL org.opencontainers.image.description="sgbd"
 
 # Comando de inicio
 CMD ["mysqld"]
 
 # Construir la imagen con nombre sgbd y buscando en el path
 # docker build -t sgbd .
-# docker build -t sgbd 'sgbd_mysql.dockerfile'
+# docker build -t sgbd sgbd_mysql.dockerfile
+# --rm: borra contenedores intermedios
+# docker build --pull --rm --file "sgbd_mysql.dockerfile" "."
+# docker build -t $(docker inspect --format='{{index .Config.Labels "name"}}' .) .
+#--tag sgbd:latest
+
 
 # Ejecuto imagen sgbd, expongo puerto para consultas desde el exterior del contenedor 
 # llamo al contenedor eloy-sgbd 
