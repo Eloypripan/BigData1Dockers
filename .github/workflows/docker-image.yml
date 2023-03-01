@@ -51,6 +51,8 @@ jobs:
       # $(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
       # my-docker-hub-namespace/my-docker-hub-repository
 
+
+      #SGBD
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
@@ -62,3 +64,24 @@ jobs:
           #labels: ${{ steps.meta.outputs.labels }}
       #- run: docker push ghcr.io/
       #- run: docker push ghcr.io/eloypripan/bigdata1dockers/sgbd:latest
+
+
+      #CDPYTHON
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: cdpython.dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/cdpython:latest
+
+
+      #CDR
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: cdr.dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/cdr:latest    
+  
