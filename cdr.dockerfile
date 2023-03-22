@@ -12,6 +12,12 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && R -e "install.packages(c('tidyverse', 'caret', 'RSNNS', 'frbs', 'FSinR', 'fable'), repos='https://cran.rstudio.com/')"
 
+# Configuración del servidor
+ENV R_PROFILE_USER=--no-save
+
+# Puerto de exposición
+EXPOSE 8787
+
 # Establece el directorio de trabajo
 WORKDIR /app
 
