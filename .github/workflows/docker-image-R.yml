@@ -54,7 +54,8 @@ jobs:
              ghcr.io/${{ github.repository }}
       # $(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
       # my-docker-hub-namespace/my-docker-hub-repository
-
+      
+      
       #CDR
       - name: CDR - Build and push Docker image
         uses: docker/build-push-action@v3
@@ -62,5 +63,6 @@ jobs:
           context: .
           file: cdr.dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/cdr:latest    
-  
+          tags: ${{ secrets.DOCKER_USERNAME }}/cdr:latest
+          
+          
