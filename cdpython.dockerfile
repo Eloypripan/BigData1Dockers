@@ -14,6 +14,9 @@ RUN pip install pandas scikit-learn scipy numpy matplotlib jupyter
 # Expone el puerto 8888 para acceder a Jupyter
 EXPOSE 8888
 
+# Configuración del servidor
+ENV JUPYTER_PASSWORD=1234
+
 # Crea un directorio para el trabajo en Jupyter
 RUN mkdir /work
 
@@ -26,6 +29,7 @@ LABEL org.opencontainers.image.source=https://github.com/eloypripan/BigData1Dock
 LABEL org.opencontainers.image.description="cdpython"
 
 # Ejecuta Jupyter al iniciar el contenedor
+#RUN ["jupyter", "notebook", "--generate-config"]
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
 
 #Construir la imagen
