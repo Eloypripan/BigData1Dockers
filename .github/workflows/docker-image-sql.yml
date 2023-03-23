@@ -3,12 +3,10 @@ name: SQL Docker Image CI
 on:
   push:
     branches: [ "main" ]
-    paths: 
-      - sgbd_mysql.dockerfile
+    paths: sgbd_mysql.dockerfile
   pull_request:
     branches: [ "main" ]
-    paths: 
-      - sgbd_mysql.dockerfile
+    paths: sgbd_mysql.dockerfile
 
 jobs:
 
