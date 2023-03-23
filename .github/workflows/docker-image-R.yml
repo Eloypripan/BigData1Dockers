@@ -1,14 +1,13 @@
 name: R Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
-    paths: 
-      - cdr.dockerfile
+    paths: cdr.dockerfile
   pull_request:
     branches: [ "main" ]
-    paths: 
-      - cdr.dockerfile
+    paths: cdr.dockerfile
 
 jobs:
 
