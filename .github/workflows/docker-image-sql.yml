@@ -1,6 +1,7 @@
 name: SQL Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
     paths: sgbd_mysql.dockerfile
