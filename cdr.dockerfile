@@ -4,7 +4,9 @@ FROM r-base:latest
 # Instala los paquetes necesarios
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
-        libharfbuzz-dev libfreetype6-dev libfribidi-dev \
+        libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev \
+        libfontconfig1-dev libicu-dev \
+        libharfbuzz-dev libfribidi-dev \
         libssl-dev \
         libcurl4-openssl-dev \
         libxml2-dev \
