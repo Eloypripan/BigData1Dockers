@@ -24,9 +24,8 @@ EXPOSE 8787
 
 # Establece el directorio de trabajo
 WORKDIR /app
-
-# Volumen de los notebooks
-VOLUME /app/notebooks
+VOLUME /app
+COPY test_R.R /app/
 
 # Nombre de la imagen
 LABEL name="cdr"
