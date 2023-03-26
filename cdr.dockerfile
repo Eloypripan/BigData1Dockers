@@ -14,7 +14,7 @@ RUN apt-get install -y --no-install-recommends \
 
 # elimina todos los archivos de lista de paquetes del cache de apt-get -recursivamente -sin_preguntar
 RUN rm -rf /var/lib/apt/lists/*
-RUN R -e "install.packages(c('tidyverse', 'caret', 'RSNNS', 'frbs', 'FSinR', 'fable'), repos='https://cran.rstudio.com/')"
+RUN R -e "install.packages(c('tidyverse', 'caret', 'RSNNS', 'frbs', 'FSinR', 'fable'), dependencies = TRUE, repos='https://cran.rstudio.com/')"
 
 # Configuración del servidor
 ENV R_PROFILE_USER='--vanilla'
