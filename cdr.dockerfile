@@ -33,8 +33,8 @@ LABEL org.opencontainers.image.source=https://github.com/eloypripan/BigData1Dock
 LABEL org.opencontainers.image.description="cdr"
 
 # Start R console by default
-CMD ["R"]
-#CMD ["/bin/bash"]
+#CMD ["R"]
+CMD ["/bin/bash"]
 
 # docker build -t cdr .
 # docker build -t cdr cdr.dockerfile
