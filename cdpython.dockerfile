@@ -15,7 +15,7 @@ RUN pip install pandas scikit-learn scipy numpy matplotlib jupyter
 EXPOSE 8888
 
 # Configuración del servidor
-ENV JUPYTER_PASSWORD=1234
+ENV JUPYTER_PASSWORD=Eloy1234567890!
 
 # Crea un directorio para el trabajo en Jupyter
 RUN mkdir /work
