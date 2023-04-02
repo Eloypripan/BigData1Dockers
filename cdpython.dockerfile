@@ -31,7 +31,7 @@ LABEL org.opencontainers.image.description="cdpython"
 
 # Ejecuta Jupyter al iniciar el contenedor
 #RUN ["jupyter", "notebook", "--generate-config"]
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.allow_origin='https://colab.research.google.com'"]
 
 #Construir la imagen
 # docker build -t cdpython .
