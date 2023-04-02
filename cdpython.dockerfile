@@ -10,6 +10,8 @@ RUN apt-get update && \
 
 # Instala las bibliotecas habituales para análisis de datos
 RUN pip install pandas scikit-learn scipy numpy matplotlib jupyter
+RUN pip install --upgrade jupyter_http_over_ws>=0.0.7
+RUN jupyter serverextension enable --py jupyter_http_over_ws
 
 # Expone el puerto 8888 para acceder a Jupyter
 EXPOSE 8888
